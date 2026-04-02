@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://desni3dduqhh0"]
+
+[sub_resource type="SystemFont" id="SystemFont_yev5y"]
+font_names = PackedStringArray("Chalkboard SE")
+subpixel_positioning = 0
+
+[resource]
+font = SubResource("SystemFont_yev5y")
+font_size = 48

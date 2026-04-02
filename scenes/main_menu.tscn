@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://ct2m514gtmgx"]
+
+[ext_resource type="Script" uid="uid://bid5wvvakys1h" path="res://scripts/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="LabelSettings" uid="uid://desni3dduqhh0" path="res://resources/game_name_label_settings.tres" id="1_l6cm7"]
+
+[node name="MainMenu" type="Control" unique_id=1794785504]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ekxnf")
+
+[node name="Panel" type="Panel" parent="." unique_id=1159316163]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameNameLabel" type="Label" parent="Panel" unique_id=935353180]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = -174.0
+offset_right = 63.0
+offset_bottom = -105.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "PONG"
+label_settings = ExtResource("1_l6cm7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1957213719]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.5
+offset_top = -4.0
+offset_right = 65.5
+offset_bottom = 111.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VSAIButton" type="Button" parent="Panel/VBoxContainer" unique_id=921478256]
+layout_mode = 2
+text = "Player Vs AI"
+
+[node name="VSPlayerButton" type="Button" parent="Panel/VBoxContainer" unique_id=1121940037]
+layout_mode = 2
+text = "Player Vs Player"
+
+[node name="Control" type="Control" parent="Panel/VBoxContainer" unique_id=1068347468]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="ExitButton" type="Button" parent="Panel/VBoxContainer" unique_id=1668798148]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="button_down" from="Panel/VBoxContainer/VSAIButton" to="." method="_on_vsai_button_button_down"]
+[connection signal="button_down" from="Panel/VBoxContainer/VSPlayerButton" to="." method="_on_vs_player_button_button_down"]
+[connection signal="button_down" from="Panel/VBoxContainer/ExitButton" to="." method="_on_exit_button_button_down"]

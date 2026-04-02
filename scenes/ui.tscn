@@ -2,16 +2,10 @@
 
 [ext_resource type="LabelSettings" uid="uid://bsxuc17eaaie" path="res://resources/score_label_settings.tres" id="1_nt7q6"]
 [ext_resource type="Script" uid="uid://byulbg6eyhle8" path="res://scripts/ui.gd" id="1_x4jx1"]
+[ext_resource type="LabelSettings" uid="uid://desni3dduqhh0" path="res://resources/game_name_label_settings.tres" id="3_yev5y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4jx1"]
 bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="SystemFont" id="SystemFont_yev5y"]
-font_names = PackedStringArray("Chalkboard SE")
-
-[sub_resource type="LabelSettings" id="LabelSettings_gdt2y"]
-font = SubResource("SystemFont_yev5y")
-font_size = 48
 
 [node name="UI" type="Control" unique_id=365167377 node_paths=PackedStringArray("start_game_panel", "left_player_score_label", "right_player_score_label", "menu_panel")]
 process_mode = 3
@@ -103,7 +97,7 @@ offset_bottom = -105.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "PONG"
-label_settings = SubResource("LabelSettings_gdt2y")
+label_settings = ExtResource("3_yev5y")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -131,10 +125,10 @@ text = "Resume"
 layout_mode = 2
 text = "Restart"
 
-[node name="ExitButton" type="Button" parent="MenuPanel/VBoxContainer" unique_id=217887408]
+[node name="ExitToMenuButton" type="Button" parent="MenuPanel/VBoxContainer" unique_id=217887408]
 layout_mode = 2
-text = "Exit"
+text = "Exit to menu"
 
 [connection signal="button_down" from="MenuPanel/VBoxContainer/ResumeButton" to="." method="_on_resume_button_button_down"]
 [connection signal="button_down" from="MenuPanel/VBoxContainer/RestartGameButton" to="." method="_on_restart_game_button_button_down"]
-[connection signal="button_down" from="MenuPanel/VBoxContainer/ExitButton" to="." method="_on_exit_button_button_down"]
+[connection signal="button_down" from="MenuPanel/VBoxContainer/ExitToMenuButton" to="." method="_on_exit_button_button_down"]

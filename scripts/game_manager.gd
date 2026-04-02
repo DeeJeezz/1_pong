@@ -1,8 +1,10 @@
 extends Node2D
 
+const _BALL_SCENE_NAME: String = "res://scenes/ball.tscn"
+const _MAIN_MENU_SCENE_NAME: String = "res://scenes/main_menu.tscn"
 const _DEFAULT_START_SCORE: int = 0
 
-@onready var ball_scene: PackedScene = preload("res://scenes/ball.tscn")
+@onready var ball_scene: PackedScene = preload(_BALL_SCENE_NAME)
 
 @export var left_paddle: BasePaddle
 @export var right_paddle: BasePaddle
@@ -15,8 +17,14 @@ var _ball_spawn_position: Vector2
 var _left_player_score: int
 var _right_player_score: int
 
+var _vs_ai: bool = false
+
 
 func _ready() -> void:
+	
+	# Vs other player or vs AI.
+	_vs_ai = right_paddle is AIPaddle
+	
 	_screen_size = get_viewport_rect().size
 	_ball_spawn_position = _screen_size / 2
 	
@@ -47,13 +55,15 @@ func _on_restart_game() -> void:
 	
 	
 func _on_exit_game() -> void:
-	get_tree().quit()
+	get_tree().change_scene_to_file(_MAIN_MENU_SCENE_NAME)
 
 
 func _launch_ball() -> Ball:
 	var ball: Ball = ball_scene.instantiate()
 	ball.global_position = _ball_spawn_position
 	add_child(ball)
+	if _vs_ai:
+		right_paddle.set_target(ball)
 
 	return ball
 

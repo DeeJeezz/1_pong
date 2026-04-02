@@ -1,8 +1,8 @@
 extends RigidBody2D
 class_name Ball
 
-const THRUST: Vector2 = Vector2(40000.0, 0)
-const RANDOM_ROTATION_ANGLE: float = 20.0
+const THRUST: Vector2 = Vector2(42500.0, 0)
+const RANDOM_ROTATION_ANGLE: float = 22.5
 
 @export var sprite: Sprite2D
 @export var collision_shape: CollisionShape2D

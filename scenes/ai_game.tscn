@@ -1,9 +1,10 @@
-[gd_scene format=3 uid="uid://k4r3s2vpdrsg"]
+[gd_scene format=3 uid="uid://caviywwjcxkuc"]
 
-[ext_resource type="PackedScene" uid="uid://cuojcyj6w5jpx" path="res://scenes/player_paddle.tscn" id="1_uwrxv"]
-[ext_resource type="PackedScene" uid="uid://c4k0fkigbnqnc" path="res://scenes/game_manager.tscn" id="2_yqjtg"]
-[ext_resource type="PackedScene" uid="uid://clc7ocxkyxcqh" path="res://scenes/wall.tscn" id="3_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://hmcrlrf1ic7d" path="res://scenes/ui.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://cuojcyj6w5jpx" path="res://scenes/player_paddle.tscn" id="1_s3xw1"]
+[ext_resource type="PackedScene" uid="uid://clc7ocxkyxcqh" path="res://scenes/wall.tscn" id="2_75afx"]
+[ext_resource type="PackedScene" uid="uid://dew6r07isvu34" path="res://scenes/ai_paddle.tscn" id="2_v7ehu"]
+[ext_resource type="PackedScene" uid="uid://c4k0fkigbnqnc" path="res://scenes/game_manager.tscn" id="3_v7ehu"]
+[ext_resource type="PackedScene" uid="uid://hmcrlrf1ic7d" path="res://scenes/ui.tscn" id="4_3tlqv"]
 
 [sub_resource type="Gradient" id="Gradient_lnu2h"]
 offsets = PackedFloat32Array(1)
@@ -13,16 +14,14 @@ colors = PackedColorArray(0.7309131, 0.7309131, 0.73091304, 1)
 gradient = SubResource("Gradient_lnu2h")
 width = 1
 
-[node name="Game" type="Node2D" unique_id=2095798859]
+[node name="AIGame" type="Node2D" unique_id=2095798859]
 
-[node name="LeftPaddle" parent="." unique_id=1172068952 instance=ExtResource("1_uwrxv")]
+[node name="LeftPaddle" parent="." unique_id=1172068952 instance=ExtResource("1_s3xw1")]
 position = Vector2(30, 324)
 color = Color(0, 0.58679986, 0.15961203, 1)
 
-[node name="RightPaddle" parent="." unique_id=1626158913 instance=ExtResource("1_uwrxv")]
+[node name="AIPaddle" parent="." unique_id=723911936 instance=ExtResource("2_v7ehu")]
 position = Vector2(1122, 324)
-input_axis = 1
-color = Color(0.9851523, 0.48514497, 0.79212195, 1)
 
 [node name="Middle" type="Node2D" parent="." unique_id=2141573469]
 
@@ -73,17 +72,18 @@ texture = SubResource("GradientTexture1D_lbhrr")
 
 [node name="Walls" type="Node2D" parent="." unique_id=1259225356]
 
-[node name="UpperWall" parent="Walls" unique_id=754545563 instance=ExtResource("3_lnu2h")]
+[node name="UpperWall" parent="Walls" unique_id=754545563 instance=ExtResource("2_75afx")]
 position = Vector2(576, 10)
 
-[node name="LowerWall" parent="Walls" unique_id=218777536 instance=ExtResource("3_lnu2h")]
+[node name="LowerWall" parent="Walls" unique_id=218777536 instance=ExtResource("2_75afx")]
 position = Vector2(576, 638)
 
-[node name="GameManager" parent="." unique_id=38976390 node_paths=PackedStringArray("left_paddle", "ui") instance=ExtResource("2_yqjtg")]
+[node name="GameManager" parent="." unique_id=38976390 node_paths=PackedStringArray("left_paddle", "right_paddle", "ui") instance=ExtResource("3_v7ehu")]
 left_paddle = NodePath("../LeftPaddle")
+right_paddle = NodePath("../AIPaddle")
 ui = NodePath("../UI")
 
-[node name="UI" parent="." unique_id=365167377 instance=ExtResource("4_lbhrr")]
+[node name="UI" parent="." unique_id=365167377 instance=ExtResource("4_3tlqv")]
 custom_minimum_size = Vector2(1152, 648)
 offset_right = 1152.0
 offset_bottom = 648.0
