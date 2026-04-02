@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://hmcrlrf1ic7d"]
+
+[ext_resource type="LabelSettings" uid="uid://bsxuc17eaaie" path="res://resources/score_label_settings.tres" id="1_nt7q6"]
+[ext_resource type="Script" uid="uid://byulbg6eyhle8" path="res://scripts/ui.gd" id="1_x4jx1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4jx1"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_yev5y"]
+font_names = PackedStringArray("Chalkboard SE")
+
+[sub_resource type="LabelSettings" id="LabelSettings_gdt2y"]
+font = SubResource("SystemFont_yev5y")
+font_size = 48
+
+[node name="UI" type="Control" unique_id=365167377 node_paths=PackedStringArray("start_game_panel", "left_player_score_label", "right_player_score_label", "menu_panel")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_x4jx1")
+start_game_panel = NodePath("StartGamePanel")
+left_player_score_label = NodePath("LeftPlayerScore")
+right_player_score_label = NodePath("RightPlayerScore")
+menu_panel = NodePath("MenuPanel")
+
+[node name="StartGamePanel" type="Panel" parent="." unique_id=2102348264]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PressToStartLabel" type="Label" parent="StartGamePanel" unique_id=821199895]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = 76.0
+offset_right = 90.0
+offset_bottom = 99.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press \"Space\" to launch ball..."
+
+[node name="LeftPlayerScore" type="Label" parent="." unique_id=63894716]
+layout_mode = 1
+offset_left = 496.0
+offset_top = 48.0
+offset_right = 536.0
+offset_bottom = 93.0
+text = "0"
+label_settings = ExtResource("1_nt7q6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RightPlayerScore" type="Label" parent="." unique_id=1475408063]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -536.0
+offset_top = 48.0
+offset_right = -496.0
+offset_bottom = 93.0
+grow_horizontal = 0
+text = "0"
+label_settings = ExtResource("1_nt7q6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuPanel" type="Panel" parent="." unique_id=1524926232]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_x4jx1")
+
+[node name="GameNameLabel" type="Label" parent="MenuPanel" unique_id=1830512701]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = -174.0
+offset_right = 63.0
+offset_bottom = -105.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "PONG"
+label_settings = SubResource("LabelSettings_gdt2y")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuPanel" unique_id=1215913421]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.5
+offset_top = 26.0
+offset_right = 32.5
+offset_bottom = 92.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="ResumeButton" type="Button" parent="MenuPanel/VBoxContainer" unique_id=1622076556]
+layout_mode = 2
+text = "Resume"
+
+[node name="RestartGameButton" type="Button" parent="MenuPanel/VBoxContainer" unique_id=1529056844]
+layout_mode = 2
+text = "Restart"
+
+[node name="ExitButton" type="Button" parent="MenuPanel/VBoxContainer" unique_id=217887408]
+layout_mode = 2
+text = "Exit"
+
+[connection signal="button_down" from="MenuPanel/VBoxContainer/ResumeButton" to="." method="_on_resume_button_button_down"]
+[connection signal="button_down" from="MenuPanel/VBoxContainer/RestartGameButton" to="." method="_on_restart_game_button_button_down"]
+[connection signal="button_down" from="MenuPanel/VBoxContainer/ExitButton" to="." method="_on_exit_button_button_down"]

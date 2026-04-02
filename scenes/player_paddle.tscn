@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cuojcyj6w5jpx"]
+
+[ext_resource type="Script" uid="uid://2q8vsi8tf4yc" path="res://scripts/player_paddle.gd" id="1_uktar"]
+[ext_resource type="PackedScene" uid="uid://k36vt315fb6i" path="res://scenes/paddle.tscn" id="1_yyijc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yyijc"]
+
+[node name="PlayerPaddle" type="StaticBody2D" unique_id=1626158913 node_paths=PackedStringArray("paddle", "collision_shape")]
+script = ExtResource("1_uktar")
+input_axis = 0
+paddle = NodePath("Paddle")
+collision_shape = NodePath("CollisionShape2D")
+
+[node name="Paddle" parent="." unique_id=116004516 instance=ExtResource("1_yyijc")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2122831647]
+shape = SubResource("RectangleShape2D_yyijc")

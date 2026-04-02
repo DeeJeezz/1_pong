@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dfbvi8x8pn4ba"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://baedaes60exvy" path="res://materials/ball_physics_material.tres" id="1_7s4qf"]
+[ext_resource type="Script" uid="uid://dtqucregccv7l" path="res://scripts/ball.gd" id="2_cxlvu"]
+
+[sub_resource type="Gradient" id="Gradient_7s4qf"]
+offsets = PackedFloat32Array(0, 0.8358209, 0.89179105)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cxlvu"]
+gradient = SubResource("Gradient_7s4qf")
+width = 36
+height = 36
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.1, 0.1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f7cbr"]
+radius = 32.0
+
+[node name="Ball" type="RigidBody2D" unique_id=1086885216 node_paths=PackedStringArray("sprite", "collision_shape")]
+physics_material_override = ExtResource("1_7s4qf")
+gravity_scale = 0.0
+can_sleep = false
+lock_rotation = true
+contact_monitor = true
+max_contacts_reported = 1
+linear_damp_mode = 1
+script = ExtResource("2_cxlvu")
+sprite = NodePath("Sprite2D")
+collision_shape = NodePath("CollisionShape2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=971950644]
+texture = SubResource("GradientTexture2D_cxlvu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1606993518]
+shape = SubResource("CircleShape2D_f7cbr")

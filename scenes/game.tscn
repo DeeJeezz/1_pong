@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://k4r3s2vpdrsg"]
+
+[ext_resource type="PackedScene" uid="uid://cuojcyj6w5jpx" path="res://scenes/player_paddle.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://c4k0fkigbnqnc" path="res://scenes/game_manager.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://clc7ocxkyxcqh" path="res://scenes/wall.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://hmcrlrf1ic7d" path="res://scenes/ui.tscn" id="4_lbhrr"]
+
+[sub_resource type="Gradient" id="Gradient_lnu2h"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.7309131, 0.7309131, 0.73091304, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lbhrr"]
+gradient = SubResource("Gradient_lnu2h")
+width = 1
+
+[node name="Game" type="Node2D" unique_id=2095798859]
+
+[node name="LeftPaddle" parent="." unique_id=1172068952 instance=ExtResource("1_uwrxv")]
+position = Vector2(32, 312)
+color = Color(0, 0.58679986, 0.15961203, 1)
+
+[node name="RightPaddle" parent="." unique_id=321366049 instance=ExtResource("1_uwrxv")]
+position = Vector2(1128, 312)
+input_axis = 1
+color = Color(0.9999998, 0.24054366, 0.60142833, 1)
+
+[node name="Middle" type="Node2D" parent="." unique_id=2141573469]
+
+[node name="Sprite2D" type="Sprite2D" parent="Middle" unique_id=154469705]
+position = Vector2(576, 64)
+scale = Vector2(7.5, 30)
+texture = SubResource("GradientTexture1D_lbhrr")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Middle" unique_id=1680785141]
+position = Vector2(576, 128)
+scale = Vector2(7.5, 30)
+texture = SubResource("GradientTexture1D_lbhrr")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Middle" unique_id=1747330978]
+position = Vector2(576, 192)
+scale = Vector2(7.5, 30)
+texture = SubResource("GradientTexture1D_lbhrr")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Middle" unique_id=1804390475]
+position = Vector2(576, 256)
+scale = Vector2(7.5, 30)
+texture = SubResource("GradientTexture1D_lbhrr")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Middle" unique_id=1277246578]
+position = Vector2(576, 320)
+scale = Vector2(7.5, 30)
+texture = SubResource("GradientTexture1D_lbhrr")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Middle" unique_id=1720829081]
+position = Vector2(576, 384)
+scale = Vector2(7.5, 30)
+texture = SubResource("GradientTexture1D_lbhrr")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Middle" unique_id=18731542]
+position = Vector2(576, 448.00003)
+scale = Vector2(7.5, 30)
+texture = SubResource("GradientTexture1D_lbhrr")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Middle" unique_id=1599509457]
+position = Vector2(576, 512)
+scale = Vector2(7.5, 30)
+texture = SubResource("GradientTexture1D_lbhrr")
+
+[node name="Sprite2D9" type="Sprite2D" parent="Middle" unique_id=257367096]
+position = Vector2(576, 576)
+scale = Vector2(7.5, 30)
+texture = SubResource("GradientTexture1D_lbhrr")
+
+[node name="Walls" type="Node2D" parent="." unique_id=1259225356]
+
+[node name="UpperWall" parent="Walls" unique_id=754545563 instance=ExtResource("3_lnu2h")]
+position = Vector2(576, 10)
+
+[node name="LowerWall" parent="Walls" unique_id=218777536 instance=ExtResource("3_lnu2h")]
+position = Vector2(576, 638)
+
+[node name="GameManager" parent="." unique_id=38976390 node_paths=PackedStringArray("left_paddle", "right_paddle", "ui") instance=ExtResource("2_yqjtg")]
+left_paddle = NodePath("../LeftPaddle")
+right_paddle = NodePath("../RightPaddle")
+ui = NodePath("../UI")
+
+[node name="UI" parent="." unique_id=365167377 instance=ExtResource("4_lbhrr")]
+process_mode = 3
+custom_minimum_size = Vector2(1152, 648)
+offset_right = 1152.0
+offset_bottom = 648.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
