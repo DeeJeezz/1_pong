@@ -40,13 +40,13 @@ func _ready() -> void:
 
 
 func _pause_game() -> void:
-	ui.show_menu()
 	get_tree().paused = true
+	ui.show_menu()
 
 
 func _on_resume_game() -> void:
-	ui.hide_menu()
 	get_tree().paused = false
+	ui.hide_menu()
 	
 	
 func _on_restart_game() -> void:
@@ -55,6 +55,7 @@ func _on_restart_game() -> void:
 	
 	
 func _on_exit_game() -> void:
+	get_tree().paused = false
 	get_tree().change_scene_to_file(_MAIN_MENU_SCENE_NAME)
 
 

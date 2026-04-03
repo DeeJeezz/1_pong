@@ -19,6 +19,13 @@ config/icon="res://icon.svg"
 
 Signals="*uid://dsdmrt5lks1gw"
 
+[display]
+
+window/size/mode=3
+window/size/resizable=false
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
 [input]
 
 wasd_move_left={
@@ -59,3 +66,4 @@ launch_ball={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+textures/vram_compression/import_etc2_astc=true

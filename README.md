@@ -2,6 +2,11 @@
 
 https://20_games_challenge.gitlab.io/games/pong/
 
+## Where to play 
+itch.io - https://deejeezz.itch.io/pong
+
+## Description
+
 Pong was the first widely successful arcade game. It was released in 1972, and started the first arcade boom. 
 The game may seem simple today, but it was designed directly in hardware. Essentially, Pong was a specialized computer designed to bounce a ball between two paddles and keep score.
 
