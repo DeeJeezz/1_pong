@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://caviywwjcxkuc"]
 
 [ext_resource type="PackedScene" uid="uid://cuojcyj6w5jpx" path="res://scenes/player_paddle.tscn" id="1_s3xw1"]
+[ext_resource type="Texture2D" uid="uid://bpgiuq1y2r0mt" path="res://materials/background_texture.tres" id="1_v7ehu"]
 [ext_resource type="PackedScene" uid="uid://clc7ocxkyxcqh" path="res://scenes/wall.tscn" id="2_75afx"]
 [ext_resource type="PackedScene" uid="uid://dew6r07isvu34" path="res://scenes/ai_paddle.tscn" id="2_v7ehu"]
 [ext_resource type="PackedScene" uid="uid://c4k0fkigbnqnc" path="res://scenes/game_manager.tscn" id="3_v7ehu"]
@@ -15,6 +16,11 @@ gradient = SubResource("Gradient_lnu2h")
 width = 1
 
 [node name="AIGame" type="Node2D" unique_id=2095798859]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=259550804]
+position = Vector2(576, 324)
+scale = Vector2(18, 10)
+texture = ExtResource("1_v7ehu")
 
 [node name="LeftPaddle" parent="." unique_id=1172068952 instance=ExtResource("1_s3xw1")]
 position = Vector2(30, 324)

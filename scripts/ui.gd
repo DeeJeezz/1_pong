@@ -6,6 +6,8 @@ class_name UI
 @export var left_player_score_label: Label
 @export var right_player_score_label: Label
 @export var menu_panel: Panel
+
+@export var sfx: AudioStreamPlayer2D
 	
 	
 func show_start_screen() -> void:
@@ -26,6 +28,7 @@ func set_right_player_score(score: int) -> void:
 	
 func show_menu() -> void:
 	menu_panel.show()
+	sfx.play()
 	
 	
 func hide_menu() -> void:

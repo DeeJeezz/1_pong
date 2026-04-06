@@ -7,6 +7,8 @@ const RANDOM_ROTATION_ANGLE: float = 22.5
 @export var sprite: Sprite2D
 @export var collision_shape: CollisionShape2D
 
+@export var sfx: AudioStreamPlayer2D
+
 
 func _ready() -> void:
 	# Setup collision shape.
@@ -23,3 +25,7 @@ func _get_random_angle_radians() -> float:
 			RANDOM_ROTATION_ANGLE,
 		),
 	)
+
+
+func _on_body_entered(_body: Node) -> void:
+	sfx.play()
