@@ -10,6 +10,7 @@ bg_color = Color(0, 0, 0, 1)
 
 [node name="UI" type="Control" unique_id=365167377 node_paths=PackedStringArray("start_game_panel", "left_player_score_label", "right_player_score_label", "menu_panel", "sfx")]
 process_mode = 3
+custom_minimum_size = Vector2(1280, 720)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

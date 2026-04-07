@@ -17,81 +17,85 @@ width = 1
 [node name="Game" type="Node2D" unique_id=2095798859]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1948949922]
-position = Vector2(576, 324)
-scale = Vector2(18, 10)
+position = Vector2(640, 364)
+scale = Vector2(20, 11.125)
 texture = ExtResource("1_iywne")
 
 [node name="LeftPaddle" parent="." unique_id=1172068952 instance=ExtResource("1_uwrxv")]
-position = Vector2(30, 324)
+position = Vector2(30, 360)
 color = Color(0, 0.58679986, 0.15961203, 1)
 
 [node name="RightPaddle" parent="." unique_id=1626158913 instance=ExtResource("1_uwrxv")]
-position = Vector2(1122, 324)
+position = Vector2(1250, 360)
 input_axis = 1
 color = Color(0.9851523, 0.48514497, 0.79212195, 1)
 
 [node name="Middle" type="Node2D" parent="." unique_id=2141573469]
+position = Vector2(640, 72)
 
 [node name="Sprite2D" type="Sprite2D" parent="Middle" unique_id=154469705]
-position = Vector2(576, 64)
+position = Vector2(0, 64)
+scale = Vector2(7.5, 30)
+texture = SubResource("GradientTexture1D_lbhrr")
+
+[node name="Sprite2D10" type="Sprite2D" parent="Middle" unique_id=975262690]
 scale = Vector2(7.5, 30)
 texture = SubResource("GradientTexture1D_lbhrr")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Middle" unique_id=1680785141]
-position = Vector2(576, 128)
+position = Vector2(0, 128)
 scale = Vector2(7.5, 30)
 texture = SubResource("GradientTexture1D_lbhrr")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Middle" unique_id=1747330978]
-position = Vector2(576, 192)
+position = Vector2(0, 192)
 scale = Vector2(7.5, 30)
 texture = SubResource("GradientTexture1D_lbhrr")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Middle" unique_id=1804390475]
-position = Vector2(576, 256)
+position = Vector2(0, 256)
 scale = Vector2(7.5, 30)
 texture = SubResource("GradientTexture1D_lbhrr")
 
 [node name="Sprite2D5" type="Sprite2D" parent="Middle" unique_id=1277246578]
-position = Vector2(576, 320)
+position = Vector2(0, 320)
 scale = Vector2(7.5, 30)
 texture = SubResource("GradientTexture1D_lbhrr")
 
 [node name="Sprite2D6" type="Sprite2D" parent="Middle" unique_id=1720829081]
-position = Vector2(576, 384)
+position = Vector2(0, 384)
 scale = Vector2(7.5, 30)
 texture = SubResource("GradientTexture1D_lbhrr")
 
 [node name="Sprite2D7" type="Sprite2D" parent="Middle" unique_id=18731542]
-position = Vector2(576, 448.00003)
+position = Vector2(0, 448.00003)
 scale = Vector2(7.5, 30)
 texture = SubResource("GradientTexture1D_lbhrr")
 
 [node name="Sprite2D8" type="Sprite2D" parent="Middle" unique_id=1599509457]
-position = Vector2(576, 512)
+position = Vector2(0, 512)
 scale = Vector2(7.5, 30)
 texture = SubResource("GradientTexture1D_lbhrr")
 
 [node name="Sprite2D9" type="Sprite2D" parent="Middle" unique_id=257367096]
-position = Vector2(576, 576)
+position = Vector2(0, 576)
 scale = Vector2(7.5, 30)
 texture = SubResource("GradientTexture1D_lbhrr")
 
 [node name="Walls" type="Node2D" parent="." unique_id=1259225356]
 
 [node name="UpperWall" parent="Walls" unique_id=754545563 instance=ExtResource("3_lnu2h")]
-position = Vector2(576, 10)
+position = Vector2(640, 8)
 
 [node name="LowerWall" parent="Walls" unique_id=218777536 instance=ExtResource("3_lnu2h")]
-position = Vector2(576, 638)
+position = Vector2(640, 712)
 
 [node name="GameManager" parent="." unique_id=38976390 node_paths=PackedStringArray("left_paddle", "ui") instance=ExtResource("2_yqjtg")]
 left_paddle = NodePath("../LeftPaddle")
 ui = NodePath("../UI")
 
 [node name="UI" parent="." unique_id=365167377 instance=ExtResource("4_lbhrr")]
-custom_minimum_size = Vector2(1152, 648)
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_right = 1280.0
+offset_bottom = 720.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
