@@ -1,6 +1,6 @@
 # pong
 
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/deejeezz/1_pong/deploy-itch.yml)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/deejeezz/1_pong/deploy.yaml)
 ![GitHub Tag](https://img.shields.io/github/v/tag/deejeezz/1_pong)
 
 https://20_games_challenge.gitlab.io/games/pong/
