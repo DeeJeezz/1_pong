@@ -7,6 +7,7 @@ https://20_games_challenge.gitlab.io/games/pong/
 
 ## Where to play 
 itch.io - https://deejeezz.itch.io/pong
+Github Pages - https://deejeezz.github.io/1_pong
 
 ## Description
 
